@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "./Title";
 
 // Import Components
 // Import Material-UI
@@ -7,6 +8,7 @@ import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import MuiAccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
+import Teams from "./TeamsInfo1";
 
 const Accordion = withStyles({
   root: {
@@ -58,6 +60,7 @@ export default function L1teams() {
 
   return (
     <>
+      <Title>Premiership (click headings below)</Title>
       <Accordion
         square
         expanded={expanded === "panel1"}
@@ -67,12 +70,7 @@ export default function L1teams() {
           <Typography>Teams</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          <Teams />
         </AccordionDetails>
       </Accordion>
     </>
