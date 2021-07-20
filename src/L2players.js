@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "./Title";
 
 // Import Components
 import PlayerStats from "./players/PlayerStats";
@@ -60,7 +59,6 @@ export default function L1players() {
 
   return (
     <>
-      <Title>Superliga</Title>
       <Accordion
         square
         expanded={expanded === "panel1"}
