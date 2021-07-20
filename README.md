@@ -10,6 +10,7 @@ this project is based on react.js
 - material UI (https://material-ui.com/)
 - React Router (https://www.npmjs.com/package/react-router)
 - react-cookie (https://www.npmjs.com/package/react-cookies)
+- axios (https://www.npmjs.com/package/axios)
 
 #
 
