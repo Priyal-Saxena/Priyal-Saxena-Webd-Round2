@@ -31,11 +31,12 @@ const League1 = () => {
           ></img>
         </Paper>
         <Paper className={classes.paper}>
-          <L1players />
-        </Paper>
-        <Paper className={classes.paper}>
           <L1teams />
         </Paper>
+        <Paper className={classes.paper}>
+          <L1players />
+        </Paper>
+
         <Paper className={classes.paper}>
           <L1fixtures />
         </Paper>
