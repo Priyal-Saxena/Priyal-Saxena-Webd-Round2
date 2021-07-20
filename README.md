@@ -2,7 +2,7 @@
 
 this project is based on react.js
 
-## APIs used
+## Libraries used
 
 - scramble (https://www.npmjs.com/package/react-scramble)
 - particles (https://www.npmjs.com/package/react-particles-js)
