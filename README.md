@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# Football Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+this project is based on react.js
 
-## Available Scripts
+## APIs used
 
-In the project directory, you can run:
+- scramble (https://www.npmjs.com/package/react-scramble)
+- particles (https://www.npmjs.com/package/react-particles-js)
+- tparticles (https://www.npmjs.com/package/react-tsparticles)
+- material UI (https://material-ui.com/)
+- React Router (https://www.npmjs.com/package/react-router)
+- react-cookie (https://www.npmjs.com/package/react-cookies)
 
-### `npm start`
+#
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Some Code Snippets
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To build a card to display info of a player
 
-### `npm test`
+```
+const Player = ({ avatar_url, html_url, login }) => {
+  return (
+    <article className="card">
+      <img src={avatar_url} alt={login} />
+      <h4>${login}</h4>
+      <p>player stats</p>
+    </article>
+  );
+};
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To build collapsible cards
 
-### `npm run build`
+```const Accordion = withStyles({
+  root: {
+    border: "1px solid rgba(0, 0, 0, .125)",
+    boxShadow: "none",
+    "&:not(:last-child)": {
+      borderBottom: 0,
+    },
+    "&:before": {
+      display: "none",
+    },
+    "&$expanded": {
+      margin: "auto",
+    },
+  },
+  expanded: {},
+})(MuiAccordion);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const AccordionSummary = withStyles({
+  root: {
+    backgroundColor: "rgba(0, 0, 0, .03)",
+    borderBottom: "1px solid rgba(0, 0, 0, .125)",
+    marginBottom: -1,
+    minHeight: 56,
+    "&$expanded": {
+      minHeight: 56,
+    },
+  },
+  content: {
+    "&$expanded": {
+      margin: "12px 0",
+    },
+  },
+  expanded: {},
+})(MuiAccordionSummary);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const AccordionDetails = withStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+  },
+}))(MuiAccordionDetails);
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+to have paper like background
 
-### `npm run eject`
+```
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    display: "flex",
+    flexDirection: "column",
+    padding: theme.spacing(1),
+    overflow: "auto",
+    margin: `${theme.spacing(1)}px auto`,
+  },
+}));
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+to build Nav
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+<nav className="navigation">
+      <ul className="list">
+        <li className="item">
+          <NavLink to="/Main" className="item-link">
+            Home
+          </NavLink>
+        </li>
+        <li className="item">
+          <NavLink to="/League1" className="item-link">
+            League1
+          </NavLink>
+        </li>
+        <li className="item">
+          <NavLink to="/League2" className="item-link">
+            League2
+          </NavLink>
+        </li>
+        <li className="item">
+          <NavLink to="/LiveSores" className="item-link">
+            LiveSores
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   And finally the main page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+     <BrowserRouter>
+        <Nav />
+        <Switch>
+          <Route exact path="/main" component={Main} />
+          <Route exact path="/League1" component={League1} />
+          <Route exact path="/League2" component={League2} />
+          <Route exact path="/LiveSores" component={LiveSores} />
+        </Switch>
+      </BrowserRouter>
+```  
+#
 
-## Learn More
+## Website Layout
+the layout is pretty simple and is designed while from a user's point of view. The goal was to make the site easy to navigate through, with a intuitive layout. I tried to implement it best to my abilities in react. 
+#
+## EXPERIENCE
+Learnt how to do build websites in react plus some hooks and libraries and let's not forget the sportsmonk API in just one week.
+This project forced me out of my comfort zone, to learn things by doing (something I'm not really comfortable with but is efficent af.)  
+Also the kind of libraries one can use with react are beautiful. Made me appreaciate react much more. By installing few libraries, implementing cool effects and syles becomes so much simpler.  
+The hardest part of this project was no doubt implementing the navbar (no joke, it almost made me cry XD). But I ended up learning about switches, Routers and react router library in react (which makes sooo much sense now), so it was a good run.  
+Had it not been for this competition I would have learned react so much later in my journey, and I'm thankful to my seniors for speeding up this learning process (and also extending the time for submission XD).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#
