@@ -1,0 +1,35 @@
+.App {
+  /* font-family: sans-serif; */
+  text-align: center;
+}
+body {
+  font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+  /* font-size: 81.25%; */
+  background-color: #cccccc;
+  background-image: url("https://ak.picdn.net/shutterstock/videos/1013211770/thumb/8.jpg");
+  /* https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US */
+}
+
+/* NavLink active state */
+.active {
+  background-color: #206a5d;
+  padding: 0.4rem 0.6rem;
+}
+.navigation {
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.726);
+}
+.list {
+  width: 70%;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 1.2rem 2rem;
+}
+.item {
+  font-size: 1.2rem;
+}
+.item-link {
+  text-decoration: none;
+  color: #ffffff;
+}
